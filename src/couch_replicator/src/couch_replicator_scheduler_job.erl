@@ -766,7 +766,7 @@ do_checkpoint(State) ->
         _DocIds ->
             % backwards compatibility with the result of a replication by
             % doc IDs in versions 0.11.x and 1.0.x
-            % TODO: deprecate (use same history format, simplify code)
+            % TODO: deprecate (use same history format, simplify code) id:11 gh:13
             [
                 {<<"start_time">>, StartTime},
                 {<<"end_time">>, EndTime},

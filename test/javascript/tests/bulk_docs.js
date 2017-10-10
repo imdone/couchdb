@@ -72,7 +72,7 @@ couchTests.bulk_docs = function(debug) {
   // Now save the bulk docs, When we use all_or_nothing, we don't get conflict
   // checking, all docs are saved regardless of conflict status, or none are
   // saved.
-// TODO: all_or_nothing is not yet supported on clusters
+// TODO: all_or_nothing is not yet supported on clusters id:54 gh:55
 //  results = db.bulkSave(docs,{all_or_nothing:true});
 //  T(results.error === undefined);
 //

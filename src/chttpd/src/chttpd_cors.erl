@@ -87,7 +87,7 @@ preflight_request(Req, Config) ->
             %%
             %% [1]: http://www.w3.org/TR/cors/#resource-preflight-requests
             %%
-            %% TODO: Square against multi origin Security Considerations and the
+            %% TODO: Square against multi origin Security Considerations and the id:3 gh:4
             %% Vary header
             %%
             case AcceptAll orelse lists:member(Origin, AcceptedOrigins) of

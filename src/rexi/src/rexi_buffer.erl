@@ -39,7 +39,7 @@ send(Dest, Msg) ->
 
 
 init(_) ->
-    %% TODO Leverage os_mon to discover available memory in the system
+    %% TODO Leverage os_mon to discover available memory in the system id:19 gh:20
     Max = list_to_integer(config:get("rexi", "buffer_count", "2000")),
     {ok, #state{max_count = Max}}.
 

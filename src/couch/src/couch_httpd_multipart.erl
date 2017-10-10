@@ -38,7 +38,7 @@ decode_multipart_stream(ContentType, DataFun, Ref) ->
     Parser ! {get_doc_bytes, Ref, self()},
     receive
     {started_open_doc_revs, NewRef} ->
-        %% FIXME: How to remove the knowledge about this message?
+        %% FIXME: How to remove the knowledge about this message? id:14 gh:16
         {{started_open_doc_revs, NewRef}, Parser, ParserRef};
     {doc_bytes, Ref, DocBytes}  ->
         {{doc_bytes, Ref, DocBytes}, Parser, ParserRef};

@@ -115,7 +115,7 @@ couchTests.attachments= function(debug) {
   });
   T(xhr.status == 201);
   var rev = JSON.parse(xhr.responseText).rev;
-// TODO: revisit Etags (missing on doc write)
+// TODO: revisit Etags (missing on doc write) id:26 gh:27
 //  TEquals('"' + rev + '"', xhr.getResponseHeader("Etag"));
 
   var xhr = CouchDB.request("GET", "/" + db_name + "/bin_doc3/attachment.txt");
@@ -143,7 +143,7 @@ couchTests.attachments= function(debug) {
   });
   T(xhr.status == 201);
   var rev = JSON.parse(xhr.responseText).rev;
-// TODO: revisit Etags (missing on doc write)
+// TODO: revisit Etags (missing on doc write) id:33 gh:35
 //  TEquals('"' + rev + '"', xhr.getResponseHeader("Etag"));
 
   var xhr = CouchDB.request("GET", "/" + db_name + "/bin_doc3/attachment.txt");

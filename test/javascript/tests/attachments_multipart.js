@@ -242,19 +242,19 @@ couchTests.attachments_multipart= function(debug) {
 
   var innerSections = parseMultipart(sections[0]);
   // 2 inner sections: a document body section plus an attachment data section
-// TODO: why does atts_since not work?
+// TODO: why does atts_since not work? id:72 gh:73
 //  T(innerSections.length === 2);
   T(innerSections.length === 3);
   T(innerSections[0].headers['Content-Type'] === 'application/json');
 
   doc = JSON.parse(innerSections[0].body);
 
-// TODO: why does atts_since not work?
+// TODO: why does atts_since not work? id:49 gh:50
 //  T(doc._attachments['foo.txt'].stub === true);
   T(doc._attachments['foo.txt'].follows === true);
   T(doc._attachments['bar.txt'].follows === true);
 
-// TODO: why does atts_since not work?
+// TODO: why does atts_since not work? id:20 gh:21
   T(innerSections[1].body === "this is 21 chars long");
   T(innerSections[2].body === "this is 18 chars l");
 
@@ -403,7 +403,7 @@ couchTests.attachments_multipart= function(debug) {
 
     innerSections = parseMultipart(sections[0]);
     // 2 inner sections: a document body section plus 1 attachment data section
-// TODO: why does atts_since not work?
+// TODO: why does atts_since not work? id:27 gh:28
 //    TEquals(2, innerSections.length);
     TEquals('application/json', innerSections[0].headers['Content-Type']);
 
@@ -411,7 +411,7 @@ couchTests.attachments_multipart= function(debug) {
 
     TEquals(true, doc._attachments['lorem.txt'].follows);
     TEquals("gzip", doc._attachments['lorem.txt'].encoding);
-// TODO: why does atts_since not work?
+// TODO: why does atts_since not work? id:34 gh:36
 //    TEquals("undefined", typeof doc._attachments['data.bin'].follows);
 //    TEquals(true, doc._attachments['data.bin'].stub);
     T(innerSections[1].body !== lorem);

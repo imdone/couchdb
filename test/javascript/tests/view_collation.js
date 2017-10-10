@@ -16,7 +16,7 @@ couchTests.view_collation = function(debug) {
   db.createDb();
   if (debug) debugger;
 
-  // NOTE, the values are already in their correct sort order. Consider this
+  // NOTE , the values are already in their correct sort order. Consider this id:91 gh:92
   // a specification of collation of json types.
 
   var values = [];

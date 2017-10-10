@@ -139,7 +139,7 @@ $CouchDBConfig = @"
 "@
 $CouchDBConfig | Out-File "$rootdir\rel\couchdb.config" -encoding ascii
 
-#TODO: Output MS NMake file format? Stick with GNU Make?
+#TODO: Output MS NMake file format? Stick with GNU Make? id:0 gh:1
 $InstallMk = @"
 # Licensed under the Apache License, Version 2.0 (the "License"); you may not
 # use this file except in compliance with the License. You may obtain a copy of

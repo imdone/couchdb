@@ -59,7 +59,7 @@ replication_id(#rep{user_ctx = UserCtx} = Rep, 2) ->
     _ ->
         % On restart we might be called before the couch_httpd process is
         % started.
-        % TODO: we might be under an SSL socket server only, or both under
+        % TODO: we might be under an SSL socket server only, or both under id:45 gh:46
         % SSL and a non-SSL socket.
         % ... mochiweb_socket_server:get(https, port)
         list_to_integer(config:get("httpd", "port", "5984"))

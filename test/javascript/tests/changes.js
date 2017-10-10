@@ -55,7 +55,7 @@ couchTests.changes = function(debug) {
     });
 
     // test with callback
-// TODO: either allow jsonp in the default global config or implement a config chg mechanism analogouts 2 sebastianrothbucher:clustertest - or leave out
+// TODO: either allow jsonp in the default global config or implement a config chg mechanism analogouts 2 sebastianrothbucher:clustertest - or leave out id:58 gh:59
 //    run_on_modified_server(
 //      [{section: "httpd",
 //        key: "allow_jsonp",
@@ -463,7 +463,7 @@ couchTests.changes = function(debug) {
 
 
   // test for userCtx
-// TODO: either make part of global config, or allow 4 config changes - or leave out
+// TODO: either make part of global config, or allow 4 config changes - or leave out id:79 gh:80
 /*
   run_on_modified_server(
     [{section: "httpd",
@@ -500,7 +500,7 @@ couchTests.changes = function(debug) {
   TEquals(1, resp.results.length);
 
   //filter includes _conflicts
-// TODO: all_or_nothing not yet in place
+// TODO: all_or_nothing not yet in place id:39 gh:40
 //  var id = db.save({'food' : 'pizza'}).id;
 //  db.bulkSave([{_id: id, 'food' : 'pasta'}], {all_or_nothing:true});
 //
@@ -509,7 +509,7 @@ couchTests.changes = function(debug) {
 //  T(resp.results.length == 1, "filter=changes_filter/conflicted");
 
   // test with erlang filter function
-// TODO: either make part of global config, or allow 4 config changes - or leave out
+// TODO: either make part of global config, or allow 4 config changes - or leave out id:92 gh:93
 /*
   run_on_modified_server([{
     section: "native_query_servers",
@@ -664,7 +664,7 @@ couchTests.changes = function(debug) {
   T(resp.results[0].id.match("[0-5]"));
   T(resp.results[1].id.match("[0-5]"));
 
-// TODO: either use local port for stats (and aggregate when n>1) or leave out
+// TODO: either use local port for stats (and aggregate when n>1) or leave out id:86 gh:87
 //  TEquals(0, CouchDB.requestStats(['couchdb', 'httpd', 'clients_requesting_changes'], true).value);
 //  CouchDB.request("GET", "/" + db.name + "/_changes");
 //  TEquals(0, CouchDB.requestStats(['couchdb', 'httpd', 'clients_requesting_changes'], true).value);

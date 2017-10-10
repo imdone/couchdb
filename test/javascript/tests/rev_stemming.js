@@ -34,7 +34,7 @@ couchTests.rev_stemming = function(debug) {
 /*
   // Make an invalid request to _revs_limit
   // Should return 400
-  /// XXX: Currently returns 500
+  /// XXX: Currently returns 500 id:96 gh:97
   var xhr = CouchDB.request("PUT", "/" + db.name + "/_revs_limit", {body:"\"foo\""});
   T(xhr.status == 400);
   var result = JSON.parse(xhr.responseText);

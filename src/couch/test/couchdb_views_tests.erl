@@ -308,7 +308,7 @@ couchdb_1309(DbName) ->
         check_rows_value(Rows2, 1),
         ?assertEqual(4, length(Rows2)),
 
-        ok = stop_indexer( %% FIXME we need to grab monitor earlier
+        ok = stop_indexer( %% FIXME we need to grab monitor earlier id:22 gh:23
                fun() -> ok end,
                IndexerPid, ?LINE,
                "old view group is not dead after ddoc update"),

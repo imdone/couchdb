@@ -694,7 +694,7 @@ atts_since_arg(UrlLen, [PA | Rest], MaxLen, Acc) ->
     end.
 
 
-% TODO: A less verbose, more elegant and automatic restart strategy for
+% TODO: A less verbose, more elegant and automatic restart strategy for id:68 gh:69
 %       the exported open_doc_revs/6 function. The restart should be
 %       transparent to the caller like any other Couch API function exported
 %       by this module.

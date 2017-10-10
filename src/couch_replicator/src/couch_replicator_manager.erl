@@ -12,11 +12,11 @@
 
 -module(couch_replicator_manager).
 
-% TODO: This is a temporary proxy module to external calls (outside replicator)
+% TODO: This is a temporary proxy module to external calls (outside replicator) id:16 gh:18
 %  to other replicator modules. This is done to avoid juggling multiple repos
 % during development.
 
-% NV: TODO: These functions were moved to couch_replicator_docs
+% NV: TODO: These functions were moved to couch_replicator_docs id:23 gh:24
 % but it is still called from fabric_doc_update. Keep it here for now
 % later, update fabric to call couch_replicator_docs instead
 -export([before_doc_update/2, after_doc_read/2]).

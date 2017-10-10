@@ -242,7 +242,7 @@ get_next_row(State) ->
     Counters1 = fabric_dict:update_counter(Worker, -1, Counters0),
     {Row, State#collector{rows = Rest, counters=Counters1}}.
 
-%% TODO: rectify nil <-> undefined discrepancies
+%% TODO: rectify nil <-> undefined discrepancies id:70 gh:71
 find_next_key(nil, Dir, Collation, RowDict) ->
     find_next_key(undefined, Dir, Collation, RowDict);
 find_next_key(undefined, Dir, Collation, RowDict) ->

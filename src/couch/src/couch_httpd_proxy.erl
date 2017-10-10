@@ -278,7 +278,7 @@ stream_response(Req, ProxyDest, ReqId) ->
                     ),
                     ibrowse:stream_next(ReqId),
                     stream_length_response(Req, ReqId, Resp),
-                    % XXX: MochiWeb apparently doesn't look at the
+                    % XXX: MochiWeb apparently doesn't look at the id:6 gh:7
                     % response to see if it must force close the
                     % connection. So we help it out here.
                     erlang:put(mochiweb_request_force_close, true),

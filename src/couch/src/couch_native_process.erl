@@ -96,11 +96,11 @@ handle_call({prompt, Data}, _From, State) ->
             {reply, Error, NewState, Idle};
         [<<"error">> | Rest] ->
             % Msg = io_lib:format("couch native server error: ~p", [Rest]),
-            % TODO: markh? (jan)
+            % TODO: markh? (jan) id:67 gh:68
             {reply, [<<"error">> | Rest], NewState, Idle};
         [<<"fatal">> | Rest] ->
             % Msg = io_lib:format("couch native server error: ~p", [Rest]),
-            % TODO: markh? (jan)
+            % TODO: markh? (jan) id:32 gh:34
             {stop, fatal, [<<"error">> | Rest], NewState};
         Resp ->
             {reply, Resp, NewState, Idle}

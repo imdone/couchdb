@@ -107,7 +107,7 @@ couchTests.auth_cache = function(debug) {
     misses_after = misses();
 
     T(misses_after === (misses_before + 1));
-    // XXX BUGGED T(hits_after === hits_before);
+    // XXX BUGGED T(hits_after === hits_before); id:73 gh:74
 
     hits_before = hits_after;
     misses_before = misses_after;
@@ -119,7 +119,7 @@ couchTests.auth_cache = function(debug) {
     misses_after = misses();
 
     T(misses_after === misses_before);
-    // XXX BUGGED T(hits_after === (hits_before + 1));
+    // XXX BUGGED T(hits_after === (hits_before + 1)); id:50 gh:51
 
     hits_before = hits_after;
     misses_before = misses_after;
@@ -131,7 +131,7 @@ couchTests.auth_cache = function(debug) {
     misses_after = misses();
 
     T(misses_after === (misses_before + 1));
-    // XXX BUGGED T(hits_after === hits_before);
+    // XXX BUGGED T(hits_after === hits_before); id:21 gh:22
 
     hits_before = hits_after;
     misses_before = misses_after;
@@ -143,7 +143,7 @@ couchTests.auth_cache = function(debug) {
     misses_after = misses();
 
     T(misses_after === (misses_before + 1));
-    // XXX BUGGED T(hits_after === hits_before);
+    // XXX BUGGED T(hits_after === hits_before); id:28 gh:29
 
     hits_before = hits_after;
     misses_before = misses_after;
@@ -155,7 +155,7 @@ couchTests.auth_cache = function(debug) {
     misses_after = misses();
 
     T(misses_after === (misses_before + 1));
-    // XXX BUGGED T(hits_after === hits_before);
+    // XXX BUGGED T(hits_after === hits_before); id:35 gh:37
 
     hits_before = hits_after;
     misses_before = misses_after;
@@ -167,8 +167,8 @@ couchTests.auth_cache = function(debug) {
     misses_after = misses();
 
     // it's an MRU cache, joe was removed from cache to add johndoe
-    // XXX BUGGED T(misses_after === (misses_before + 1));
-    // XXX BUGGED T(hits_after === hits_before);
+    // XXX BUGGED T(misses_after === (misses_before + 1)); id:74 gh:75
+    // XXX BUGGED T(hits_after === hits_before); id:51 gh:52
 
     hits_before = hits_after;
     misses_before = misses_after;
@@ -180,7 +180,7 @@ couchTests.auth_cache = function(debug) {
     misses_after = misses();
 
     T(misses_after === misses_before);
-    // XXX BUGGED T(hits_after === (hits_before + 1));
+    // XXX BUGGED T(hits_after === (hits_before + 1)); id:55 gh:56
 
     hits_before = hits_after;
     misses_before = misses_after;
@@ -189,7 +189,7 @@ couchTests.auth_cache = function(debug) {
     T(authDb.save(fdmanana).ok);
 
     // cache was refreshed
-/*  // XXX BUGGED
+/*  // XXX BUGGED id:29 gh:30
     T(CouchDB.login("fdmanana", "qwerty").error === "unauthorized");
     T(CouchDB.login("fdmanana", "foobar").ok);
     T(CouchDB.logout().ok);
@@ -199,7 +199,7 @@ couchTests.auth_cache = function(debug) {
     misses_after = misses();
 
     T(misses_after === misses_before);
-    // XXX BUGGED T(hits_after === (hits_before + 2));
+    // XXX BUGGED T(hits_after === (hits_before + 2)); id:36 gh:32
 
     hits_before = hits_after;
     misses_before = misses_after;
@@ -209,7 +209,7 @@ couchTests.auth_cache = function(debug) {
     T(authDb.save(fdmanana).ok);
 
     // cache was refreshed
-/*  // XXX BUGGED
+/*  // XXX BUGGED id:75 gh:76
     T(CouchDB.login("fdmanana", "foobar").error === "unauthorized");
     T(CouchDB.login("fdmanana", "javascript").ok);
     T(CouchDB.logout().ok);
@@ -219,7 +219,7 @@ couchTests.auth_cache = function(debug) {
     misses_after = misses();
 
     T(misses_after === misses_before);
-    // XXX BUGGED T(hits_after === (hits_before + 2));
+    // XXX BUGGED T(hits_after === (hits_before + 2)); id:52 gh:53
 
     T(authDb.deleteDoc(fdmanana).ok);
 
@@ -245,8 +245,8 @@ couchTests.auth_cache = function(debug) {
     hits_after = hits();
     misses_after = misses();
 
-    // XXX BUGGED T(misses_after === (misses_before + 1));
-    // XXX BUGGED T(hits_after === hits_before);
+    // XXX BUGGED T(misses_after === (misses_before + 1)); id:56 gh:57
+    // XXX BUGGED T(hits_after === hits_before); id:30 gh:31
 
     T(authDb.compact().ok);
 
@@ -261,8 +261,8 @@ couchTests.auth_cache = function(debug) {
     hits_after = hits();
     misses_after = misses();
 
-    // XXX BUGGED T(misses_after === misses_before);
-    // XXX BUGGED T(hits_after === (hits_before + 1));
+    // XXX BUGGED T(misses_after === misses_before); id:37 gh:38
+    // XXX BUGGED T(hits_after === (hits_before + 1)); id:76 gh:77
   }
 
 

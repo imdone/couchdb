@@ -88,7 +88,7 @@ couchTests.config = function(debug) {
   T(password_hashed.match(/^-pbkdf2-/) || password_hashed.match(/^-hashed-/),
     "Admin password is hashed");
 
-/* // XXX: BUGGED
+/* // XXX: BUGGED id:80 gh:81
   xhr = CouchDB.request("PUT", "/_node/node1@127.0.0.1/_config/admins/administrator?raw=nothanks",{
     body : JSON.stringify(password_hashed),
     headers: {"X-Couch-Persist": "false"}
@@ -150,7 +150,7 @@ couchTests.config = function(debug) {
   });
   TEquals(200, xhr.status, "Set config whitelist to something valid");
 
-/* // XXX BUGGED!
+/* // XXX BUGGED! id:40 gh:41
   ["PUT", "DELETE"].forEach(function(method) {
     ["test/not_foo", "not_test/foo", "neither_test/nor_foo"].forEach(function(pair) {
       var path = "/_node/node1@127.0.0.1/_config/" + pair;

@@ -132,13 +132,13 @@ pp_rep_id({Base, Extension}) ->
     Base ++ Extension.
 
 
-% NV: TODO: this function is not used outside api wrap module
+% NV: TODO: this function is not used outside api wrap module id:69 gh:70
 % consider moving it there during final cleanup
 is_deleted(Change) ->
     get_json_value(<<"deleted">>, Change, false).
 
 
-% NV: TODO: proxy some functions which used to be here, later remove
+% NV: TODO: proxy some functions which used to be here, later remove id:46 gh:47
 % these and replace calls to their respective modules
 replication_id(Rep, Version) ->
     couch_replicator_ids:replication_id(Rep, Version).
