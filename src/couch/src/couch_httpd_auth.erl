@@ -310,7 +310,7 @@ handle_session_req(#httpd{method='POST', mochi_req=MochiReq}=Req, AuthModule) ->
             UserSalt = couch_util:get_value(<<"salt">>, UserProps),
             CurrentTime = make_cookie_time(),
             Cookie = cookie_auth_cookie(Req, ?b2l(UserName), <<Secret/binary, UserSalt/binary>>, CurrentTime),
-            % TODO document the "next" feature in Futon
+            % TODO document the "next" feature in Futon id:31 gh:33
             {Code, Headers} = case couch_httpd:qs_value(Req, "next", nil) of
                 nil ->
                     {200, [Cookie]};

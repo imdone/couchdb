@@ -610,7 +610,7 @@ describe "query server normal case" do
 
   describe "show with headers" do
     before(:all) do
-      # TODO we can make real ddocs up there. 
+      # TODO we can make real ddocs up there.  id:85 gh:86
       @fun = functions["show-headers"][LANGUAGE]
       @ddoc = make_ddoc(["shows","headers"], @fun)
       @qs.teach_ddoc(@ddoc)

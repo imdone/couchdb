@@ -57,7 +57,7 @@ couchTests.proxyauth = function(debug) {
     
     CouchDB.logout();
 
-/*  XXX: None of the rest of this is supported yet in 2.0    
+/*  XXX: None of the rest of this is supported yet in 2.0     id:94 gh:95
     var headers = {
       "X-Auth-CouchDB-UserName": "benoitc@apache.org",
       "X-Auth-CouchDB-Roles": "test",

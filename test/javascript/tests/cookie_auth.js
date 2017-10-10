@@ -77,7 +77,7 @@ couchTests.cookie_auth = function(debug) {
       var ddoc = open_as(usersDb, "_design/_auth", "jan");
       T(ddoc && ddoc.validate_doc_update);
 
-      // TODO test that changing the config so an existing db becomes the users db installs the ddoc also
+      // TODO test that changing the config so an existing db becomes the users db installs the ddoc also id:93 gh:94
 
       // Create a user
       var jasonUserDoc = CouchDB.prepareUserDoc({
@@ -163,7 +163,7 @@ couchTests.cookie_auth = function(debug) {
         TEquals(404, usersDb.last_req.status);
       }
 
-      // TODO should login() throw an exception here?
+      // TODO should login() throw an exception here? id:87 gh:88
        T(!CouchDB.login('Jason Davies', "2.71828").ok);
        T(!CouchDB.login('Robert Allen Zimmerman', 'd00d').ok);
 

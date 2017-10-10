@@ -206,7 +206,7 @@ skip_message(Acc0) ->
 validate_atomic_update(_, _, false) ->
     ok;
 validate_atomic_update(_DbName, AllDocs, true) ->
-    % TODO actually perform the validation.  This requires some hackery, we need
+    % TODO actually perform the validation.  This requires some hackery, we need id:12 gh:14
     % to basically extract the prep_and_validate_updates function from couch_db
     % and only run that, without actually writing in case of a success.
     Error = {not_implemented, <<"all_or_nothing is not supported">>},

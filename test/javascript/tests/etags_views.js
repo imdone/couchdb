@@ -204,12 +204,12 @@ couchTests.etags_views = function(debug) {
   
   // A new database should have unique _all_docs etags. 
   db.deleteDb(); 
-  db.createDb(); // TODO: when re-activating try having a new DB name
+  db.createDb(); // TODO: when re-activating try having a new DB name id:60 gh:61
   db.save({a: 1}); 
   xhr = CouchDB.request("GET", "/" + db_name + "/_all_docs"); 
   var etag = xhr.getResponseHeader("etag"); 
   db.deleteDb(); 
-  db.createDb(); // TODO: when re-activating try having a new DB name
+  db.createDb(); // TODO: when re-activating try having a new DB name id:81 gh:82
   db.save({a: 2}); 
   xhr = CouchDB.request("GET", "/" + db_name + "/_all_docs"); 
   var new_etag = xhr.getResponseHeader("etag");

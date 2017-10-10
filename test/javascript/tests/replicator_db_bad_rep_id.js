@@ -16,7 +16,7 @@ couchTests.replicator_db_bad_rep_id = function(debug) {
 
   var populate_db = replicator_db.populate_db;
   var docs1 = replicator_db.docs1;
-  // TODO: dice DBs (at least target)
+  // TODO: dice DBs (at least target) id:95 gh:96
   var dbA = replicator_db.dbA;
   var dbB = replicator_db.dbB;
   //var repDb = replicator_db.repDb;
@@ -31,7 +31,7 @@ couchTests.replicator_db_bad_rep_id = function(debug) {
 
     var repDoc = {
       _id: "foo_rep",
-// TODO: fix DB name issue and remove absolute URL again
+// TODO: fix DB name issue and remove absolute URL again id:89 gh:90
       source: 'http://localhost:15984/'+dbA.name,
       target: 'http://localhost:15984/'+dbB.name,
       replication_id: "1234abc"

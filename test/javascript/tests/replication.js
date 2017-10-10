@@ -1718,7 +1718,7 @@ couchTests.replication = function(debug) {
         CouchDB.replicate(dbPairsPrefixes[i].source+sourceDb.name, dbPairsPrefixes[i].target+targetDb.name);
         T(false, "should have raised an exception");
       } catch (x) {
-        // TODO: small thing: DB exists but is no more found - at least we have an exception, so it's rather minor
+        // TODO: small thing: DB exists but is no more found - at least we have an exception, so it's rather minor id:82 gh:83
         //TEquals("unauthorized", x.error);
         T(!!x);
       }
@@ -1793,7 +1793,7 @@ couchTests.replication = function(debug) {
   // end of test for COUCHDB-885
 
   // Test for COUCHDB-1242 (reject non-string query_params)
-  // TODO: non-String params crash CouchDB alltogether
+  // TODO: non-String params crash CouchDB alltogether id:42 gh:43
   /*
   try {
     CouchDB.replicate(sourceDb, targetDb, {

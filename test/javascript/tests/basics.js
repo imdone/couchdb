@@ -21,8 +21,8 @@ couchTests.basics = function(debug) {
   var db_name = get_random_db_name()
   var db = new CouchDB(db_name, {"X-Couch-Full-Commit":"false"});
 
-  //TODO bug COUCHDB-100: DELETE on non-existent DB returns 500 instead of 404
-  //TODO db.deleteDb();
+  //TODO bug COUCHDB-100: DELETE on non-existent DB returns 500 instead of 404 id:53 gh:54
+  //TODO db.deleteDb(); id:57 gh:58
 
   db.createDb();
 
@@ -98,7 +98,7 @@ couchTests.basics = function(debug) {
   T(result[1].ok);
 
   // latest=true suppresses non-leaf revisions
-// TODO: does no more work on cluster - function_clause error fabric_doc_open_revs:handle_message/3
+// TODO: does no more work on cluster - function_clause error fabric_doc_open_revs:handle_message/3 id:78 gh:79
 //  var result = db.open("COUCHDB-954", {open_revs:[oldRev,newRev], latest:true});
 //  T(result.length == 1, "should only get the child revision with latest=true");
 //  T(result[0].ok._rev == newRev, "should get the child and not the parent");
@@ -172,7 +172,7 @@ couchTests.basics = function(debug) {
   // make sure we can still open the old rev of the deleted doc
   T(db.open(existingDoc._id, {rev: existingDoc._rev}) != null);
   // make sure restart works
-// TODO: investigate why it won't work
+// TODO: investigate why it won't work id:38 gh:39
 //  T(db.ensureFullCommit().ok);
 //  restartServer();
 
@@ -279,7 +279,7 @@ couchTests.basics = function(debug) {
 
   // On restart, a request for creating a database that already exists can
   // not override the existing database file
-  // TODO
+  // TODO id:77 gh:78
   // db = new CouchDB(db_name);
   // xhr = CouchDB.request("PUT", "/" + db.name);
   // TEquals(201, xhr.status);

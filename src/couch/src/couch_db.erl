@@ -1738,7 +1738,7 @@ do_pipe([Filter|Rest], F0) ->
 
 set_namespace_range(Options, undefined) -> Options;
 set_namespace_range(Options, NS) ->
-    %% FIXME depending on order we might need to swap keys
+    %% FIXME depending on order we might need to swap keys id:66 gh:67
     SK = select_gt(
            proplists:get_value(start_key, Options, <<"">>),
            <<NS/binary, "/">>),

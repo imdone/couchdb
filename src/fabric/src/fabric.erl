@@ -437,7 +437,7 @@ design_docs(DbName) ->
 
 %% @doc forces a reload of validation functions, this is performed after
 %%      design docs are update
-%% NOTE: This function probably doesn't belong here as part fo the API
+%% NOTE: This function probably doesn't belong here as part fo the API id:24 gh:25
 -spec reset_validation_funs(dbname()) -> [reference()].
 reset_validation_funs(DbName) ->
     [rexi:cast(Node, {fabric_rpc, reset_validation_funs, [Name]}) ||

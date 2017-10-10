@@ -200,7 +200,7 @@ try_bind_vhost([VhostSpec|Rest], HostParts, Port, PathParts) ->
 %% doc: build new patch from bindings. bindings are query args
 %% (+ dynamic query rewritten if needed) and bindings found in
 %% bind_path step.
-%% TODO: merge code with rewrite. But we need to make sure we are
+%% TODO: merge code with rewrite. But we need to make sure we are id:9 gh:10
 %% in string here.
 make_target([], _Bindings, _Remaining, Acc) ->
     lists:reverse(Acc);

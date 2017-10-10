@@ -17,7 +17,7 @@ couchTests.replicator_db_by_doc_id = function(debug) {
 
   var populate_db = replicator_db.populate_db;
   var docs1 = replicator_db.docs1;
-  // TODO: dice DBs (at least target)
+  // TODO: dice DBs (at least target) id:62 gh:63
   var dbA = replicator_db.dbA;
   var dbB = replicator_db.dbB;
   //var repDb = replicator_db.repDb;
@@ -41,7 +41,7 @@ couchTests.replicator_db_by_doc_id = function(debug) {
     var repDoc = {
       _id: "foo_cont_rep_doc",
       source: "http://" + CouchDB.host + "/" + dbA.name,
-      // TODO: fix DB name issue and remove absolute URL again
+      // TODO: fix DB name issue and remove absolute URL again id:83 gh:84
       target: 'http://localhost:15984/' + dbB.name,
       doc_ids: ["foo666", "foo3", "_design/mydesign", "foo999", "foo1"]
     };
@@ -66,7 +66,7 @@ couchTests.replicator_db_by_doc_id = function(debug) {
     T(copy === null);
 
     copy = dbB.open("_design/mydesign");
-    // TODO: recheck - but I believe this should be in the target! (see also #written below)
+    // TODO: recheck - but I believe this should be in the target! (see also #written below) id:43 gh:44
     T(copy !== null);
 
     repDoc = replDb.open(repDoc._id);

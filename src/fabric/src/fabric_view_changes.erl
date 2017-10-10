@@ -134,7 +134,7 @@ send_changes(DbName, ChangesArgs, Callback, PackedSeqs, AccIn, Timeout) ->
             [{Shard#shard{ref = Ref}, Seq}];
         false ->
             % Find some replacement shards to cover the missing range
-            % TODO It's possible in rare cases of shard merging to end up
+            % TODO It's possible in rare cases of shard merging to end up id:47 gh:48
             % with overlapping shard ranges from this technique
             lists:map(fun(#shard{name=Name2, node=N2} = NewShard) ->
                 Ref = rexi:cast(N2, {fabric_rpc, changes, [Name2, ChangesArgs,
@@ -154,7 +154,7 @@ send_changes(DbName, ChangesArgs, Callback, PackedSeqs, AccIn, Timeout) ->
             [{#shard{node = OldNode}, OldSeq} | _] ->
                 SeqArg = make_replacement_arg(OldNode, OldSeq);
             _ ->
-                % TODO this clause is probably unreachable in the N>2
+                % TODO this clause is probably unreachable in the N>2 id:18 gh:19
                 % case because we compute replacements only if a shard has one
                 % in the original set.
                 couch_log:error("Streaming ~s from zero while replacing ~p",
@@ -210,7 +210,7 @@ send_changes(DbName, Workers, Seqs, ChangesArgs, Callback, AccIn, Timeout) ->
         offset = fabric_dict:init(Workers, null),
         rows = Seqs % store sequence positions instead
     },
-    %% TODO: errors need to be handled here
+    %% TODO: errors need to be handled here id:25 gh:26
     receive_results(Workers, State, Timeout, Callback).
 
 receive_results(Workers, State, Timeout, Callback) ->
@@ -421,7 +421,7 @@ do_unpack_seqs(Opaque, DbName) ->
     end, dict:to_list(DedupDict)),
 
     % Create a fabric_dict of {Shard, Seq} entries
-    % TODO relies on internal structure of fabric_dict as keylist
+    % TODO relies on internal structure of fabric_dict as keylist id:13 gh:15
     Unpacked = lists:flatmap(fun({Node, [A,B], Seq}) ->
         case mem3:get_shard(DbName, Node, [A,B]) of
         {ok, Shard} ->
@@ -488,7 +488,7 @@ changes_row(Props0) ->
     {change, {Props2}}.
 
 find_replacement_shards(#shard{range=Range}, AllShards) ->
-    % TODO make this moar betta -- we might have split or merged the partition
+    % TODO make this moar betta -- we might have split or merged the partition id:71 gh:72
     [Shard || Shard <- AllShards, Shard#shard.range =:= Range].
 
 validate_start_seq(_DbName, "now") ->

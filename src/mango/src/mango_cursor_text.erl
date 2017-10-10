@@ -307,7 +307,7 @@ get_json_docs(DbName, Hits) ->
     Ids = lists:map(fun(#sortable{item = Item}) ->
         couch_util:get_value(<<"_id">>, Item#hit.fields)
     end, Hits),
-    % TODO: respect R query parameter (same as json indexes)
+    % TODO: respect R query parameter (same as json indexes) id:48 gh:49
     {ok, IdDocs} = dreyfus_fabric:get_json_docs(DbName, Ids),
     lists:map(fun(#sortable{item = Item} = Sort) ->
         Id = couch_util:get_value(<<"_id">>, Item#hit.fields),

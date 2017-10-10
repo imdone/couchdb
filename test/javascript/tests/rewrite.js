@@ -442,7 +442,7 @@ couchTests.rewrite = function(debug) {
           });
       });
 
-/*  // XXX: we have actual failures here that we need to get to
+/*  // XXX: we have actual failures here that we need to get to id:90 gh:91
     // test invalid rewrites
     // string
     var ddoc = {

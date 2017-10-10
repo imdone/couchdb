@@ -152,7 +152,7 @@ handle_task_status_req(Req) ->
 
 handle_replicate_req(#httpd{method='POST', user_ctx=Ctx} = Req) ->
     chttpd:validate_ctype(Req, "application/json"),
-    %% see HACK in chttpd.erl about replication
+    %% see HACK in chttpd.erl about replication id:5 gh:6
     PostBody = get(post_body),
     case replicate(PostBody, Ctx) of
         {ok, {continuous, RepId}} ->

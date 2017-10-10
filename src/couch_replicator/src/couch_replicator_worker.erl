@@ -25,7 +25,7 @@
 -include("couch_replicator_api_wrap.hrl").
 -include("couch_replicator.hrl").
 
-% TODO: maybe make both buffer max sizes configurable
+% TODO: maybe make both buffer max sizes configurable id:17 gh:12
 -define(DOC_BUFFER_BYTE_SIZE, 512 * 1024).   % for remote targets
 -define(DOC_BUFFER_LEN, 10).                 % for local targets, # of documents
 -define(MAX_BULK_ATT_SIZE, 64 * 1024).

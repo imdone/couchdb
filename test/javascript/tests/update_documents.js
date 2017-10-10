@@ -128,7 +128,7 @@ couchTests.update_documents = function(debug) {
 
   // no GET allowed
   xhr = CouchDB.request("GET", "/" + db_name + "/_design/update/_update/hello");
-  // T(xhr.status == 405); // TODO allow qs to throw error code as well as error message
+  // T(xhr.status == 405); // TODO allow qs to throw error code as well as error message id:44 gh:45
   T(JSON.parse(xhr.responseText).error == "method_not_allowed");
 
   // // hello update world (non-existing docid)

@@ -301,7 +301,7 @@ multi_query_view(Req, Db, DDoc, ViewName, Queries) ->
     {ok, Resp2} = couch_httpd:etag_maybe(Req, fun() ->
         Max = chttpd:chunked_response_buffer_size(),
         VAcc0 = #vacc{db=Db, req=Req, prepend="\r\n", threshold=Max},
-        %% TODO: proper calculation of etag
+        %% TODO: proper calculation of etag id:10 gh:11
         Etag = [$", couch_uuids:new(), $"],
         Headers = [{"ETag", Etag}],
         FirstChunk = "{\"results\":[",

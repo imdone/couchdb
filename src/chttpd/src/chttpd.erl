@@ -331,7 +331,7 @@ catch_error(HttpReq, error, database_does_not_exist) ->
     send_error(HttpReq, database_does_not_exist);
 catch_error(HttpReq, Tag, Error) ->
     Stack = erlang:get_stacktrace(),
-    % TODO improve logging and metrics collection for client disconnects
+    % TODO improve logging and metrics collection for client disconnects id:65 gh:66
     case {Tag, Error, Stack} of
         {exit, normal, [{mochiweb_request, send, _, _} | _]} ->
             exit(normal); % Client disconnect (R15+)
@@ -382,7 +382,7 @@ maybe_log(_HttpReq, #httpd_resp{should_log = false}) ->
     ok.
 
 
-%% HACK: replication currently handles two forms of input, #db{} style
+%% HACK: replication currently handles two forms of input, #db{} style id:1 gh:2
 %% and #http_db style. We need a third that makes use of fabric. #db{}
 %% works fine for replicating the dbs and nodes database because they
 %% aren't sharded. So for now when a local db is specified as the source or

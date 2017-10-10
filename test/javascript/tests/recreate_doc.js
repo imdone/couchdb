@@ -98,7 +98,7 @@ couchTests.recreate_doc = function(debug) {
       };
       T(db.save(ret[ret.length-1]).ok);
     }
-/* TODO: if we need and can, re-enable compaction which per se is not available in the cluster - that way, we at least have all else
+/* TODO: if we need and can, re-enable compaction which per se is not available in the cluster - that way, we at least have all else id:88 gh:89
     db.compact();
     while(db.info().compact_running) {}
 */
@@ -141,7 +141,7 @@ couchTests.recreate_doc = function(debug) {
   // as it didn't consider the possibility that a compaction
   // might run after the original tree screw up.
 
-/* TODO: if we need and can, re-enable compaction which per se is not available in the cluster - that way, we at least have all else
+/* TODO: if we need and can, re-enable compaction which per se is not available in the cluster - that way, we at least have all else id:61 gh:62
   revs = createDoc("b");
   T(db.save(revs[1], {new_edits: false}).ok);
   db.compact();

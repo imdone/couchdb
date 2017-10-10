@@ -146,7 +146,7 @@ ensure_in_single_revision_leaf(DbName) ->
     ok = couch_db:close(Db),
     [{ok, Doc}] = Leaves,
 
-    %% FIXME: server restart won't work from test side
+    %% FIXME: server restart won't work from test side id:15 gh:17
     %% stop(ok),
     %% start(),
 

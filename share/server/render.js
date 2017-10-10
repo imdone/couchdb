@@ -14,7 +14,7 @@
 var Mime = (function() {
   // registerType(name, mime-type, mime-type, ...)
   // 
-  // Available in query server sandbox. TODO: The list is cleared on reset.
+  // Available in query server sandbox. TODO: The list is cleared on reset. id:4 gh:5
   // This registers a particular name with the set of mimetypes it can handle.
   // Whoever registers last wins.
   // 
