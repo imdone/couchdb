@@ -315,14 +315,16 @@ count_view_changes_since(Db, DDoc, VName, SinceSeq, Options) ->
                 _ -> View#mrview.seq_btree
             end,
             lists:foldl(fun(Opts, Acc0) ->
-                            {ok, N} = couch_btree:fold_reduce(
-                                    Btree, fun(_SeqStart, PartialReds, 0) ->
-                                        {ok, couch_btree:final_reduce(
-                                                    Btree, PartialReds)}
-                                    end,
-                                0, Opts),
-                            Acc0 + N
-                    end, 0, OptList);
+                case couch_btree:fold_reduce(Btree,
+                    fun(_SeqStart, PartialReds, 0) ->
+                        {ok, couch_btree:final_reduce(Btree, PartialReds)}
+                    end,0, Opts) of
+                        {ok, N} when is_integer(N) ->
+                            Acc0 + N;
+                        {ok, N} when is_tuple(N) ->
+                            Acc0 + element(1, N)
+                end
+            end, 0, OptList);
         _ ->
             {error, seqs_not_indexed}
     end.
